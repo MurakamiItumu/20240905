@@ -10,15 +10,15 @@ public class igaguriController : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(dir);
     }
 
-    void OnCollisionEnter(Collision other)
-    {
+    private void OnCollisionEnter(Collision collision)
+    { 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<ParticleSystem>().Play();
     }
 
     void Start()
     {
-        Application.targetFrameRate = 80;
+        Application.targetFrameRate = 60;
         //Shoot(new Vector3(0, 200, 2000));
     }
 }
